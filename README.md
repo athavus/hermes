@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="./docs/assets/dashboard.png" alt="Hermes Dashboard" width="800">
   <h1>Hermes</h1>
   <p><strong>Sistema de Gerenciamento de Telemetria de Várias Máquinas</strong></p>
+  <img src="./docs/assets/dashboard.png" alt="Hermes Dashboard" width="800">
 </div>
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
