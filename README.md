@@ -1,10 +1,9 @@
 <div align="center">
-  <img src="./docs/assets/dashboard.png" alt="Grieves Dashboard" width="800">
   <h1>Grieves</h1>
   <p><strong>Sistema de Gerenciamento de Telemetria de Várias Máquinas</strong></p>
+  <img src="./docs/assets/dashboard.png" alt="Grieves Dashboard" width="800">
 </div>
 
-![Status do Projeto](https://img.shields.io/badge/Status-Concluído-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.0-green)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-3.9-orange)
