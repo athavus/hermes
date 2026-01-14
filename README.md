@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Grieves</h1>
-  <p><strong>Sistema de Gerenciamento de Telemetria de Várias Máquinas</strong></p>
+  <p><strong>Sistema de Otimização Preditiva de Consumo Energético Através de Gêmeos Digitais</strong></p>
   <img src="./docs/assets/dashboard.png" alt="Grieves Dashboard" width="800">
 </div>
 
