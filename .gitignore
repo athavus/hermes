@@ -1,0 +1,5 @@
+node_modules
+venv
+__pycache__
+/client/node_modules
+server/raspberry_data.db

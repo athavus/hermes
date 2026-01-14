@@ -5,7 +5,7 @@
             <!-- WiFi Status -->
             <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-sm">
                 <div class="flex items-center gap-3 mb-2">
-                    <div class="p-2 bg-blue-100 rounded-lg">
+                    <div class="p-2 rounded-lg">
                         <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
                         </svg>
@@ -20,7 +20,7 @@
             <!-- Memory Consumption -->
             <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-sm">
                 <div class="flex items-center gap-3 mb-2">
-                    <div class="p-2 bg-purple-100 rounded-lg">
+                    <div class="p-2 rounded-lg">
                         <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
@@ -33,7 +33,7 @@
             <!-- Temperature -->
             <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-sm">
                 <div class="flex items-center gap-3 mb-2">
-                    <div class="p-2 bg-orange-100 rounded-lg">
+                    <div class="p-2 rounded-lg">
                         <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
@@ -46,7 +46,7 @@
             <!-- GPU Status -->
             <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-sm">
                 <div class="flex items-center gap-3 mb-2">
-                    <div class="p-2 bg-green-100 rounded-lg">
+                    <div class="p-2 rounded-lg">
                         <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                         </svg>
@@ -74,15 +74,15 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-blue-50 p-3 rounded-lg">
-                        <span class="text-xs text-blue-600 font-bold block uppercase tracking-wider">Bytes Enviados</span>
+                    <div class="p-3 rounded-lg">
+                        <span class="text-xs text-zinc-950 font-bold block uppercase tracking-wider">Bytes Enviados</span>
                         <span class="text-lg font-mono font-bold text-blue-800">{{ formatBytes(deviceDetails.net_bytes_sent) }}</span>
                     </div>
-                    <div class="bg-green-50 p-3 rounded-lg">
-                        <span class="text-xs text-green-600 font-bold block uppercase tracking-wider">Bytes Recebidos</span>
+                    <div class="p-3 rounded-lg">
+                        <span class="text-xs text-zinc-950 font-bold block uppercase tracking-wider">Bytes Recebidos</span>
                         <span class="text-lg font-mono font-bold text-green-800">{{ formatBytes(deviceDetails.net_bytes_recv) }}</span>
                     </div>
-                    <div class="lg:col-span-2 bg-gray-50 p-3 rounded-lg flex flex-wrap items-center gap-2">
+                    <div class="lg:col-span-2 p-3 rounded-lg flex flex-wrap items-center gap-2">
                         <span class="text-xs text-gray-500 font-bold block uppercase w-full mb-1">Interfaces Ativas</span>
                         <span v-for="iface in deviceDetails.net_ifaces" :key="iface" class="px-2 py-0.5 bg-white text-gray-600 text-xs rounded border border-gray-200 font-mono">
                             {{ iface }}
@@ -95,19 +95,15 @@
         <!-- Gráficos em Tempo Real -->
         <div class="mt-12 bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
             <h3 class="text-xl font-bold mb-6 text-gray-800 flex items-center gap-3">
-                <span class="flex h-3 w-3 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-                </span>
                 Monitoramento de Performance
             </h3>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Gráfico CPU -->
                 <div class="chart-card group">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-50">
                         <h4 class="font-bold text-gray-600">Uso de CPU</h4>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 font-mono font-bold rounded-lg border border-blue-100">
+                        <span class="px-3 py-1 text-blue-700 font-mono font-bold rounded-lg border border-blue-100">
                             {{ formatCpuPercent(deviceDetails.cpu_percent) }}%
                         </span>
                     </div>
@@ -120,7 +116,7 @@
                 <div class="chart-card group">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-50">
                         <h4 class="font-bold text-gray-600">Uso de GPU</h4>
-                        <span class="px-3 py-1 bg-green-50 text-green-700 font-mono font-bold rounded-lg border border-green-100">
+                        <span class="px-3 py-1 text-green-700 font-mono font-bold rounded-lg border border-green-100">
                             {{ formatCpuPercent(deviceDetails.gpu_load) }}%
                         </span>
                     </div>
@@ -133,7 +129,7 @@
                 <div class="chart-card group">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-50">
                         <h4 class="font-bold text-gray-600">Uso de RAM</h4>
-                        <span class="px-3 py-1 bg-purple-50 text-purple-700 font-mono font-bold rounded-lg border border-purple-100">
+                        <span class="px-3 py-1 text-purple-700 font-mono font-bold rounded-lg border border-purple-100">
                             {{ formatMemPercent(deviceDetails.mem_percent) }}%
                         </span>
                     </div>
@@ -146,7 +142,7 @@
                 <div class="chart-card group">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-50">
                         <h4 class="font-bold text-gray-600">Temperatura CPU</h4>
-                        <span class="px-3 py-1 bg-orange-50 text-orange-700 font-mono font-bold rounded-lg border border-orange-100">
+                        <span class="px-3 py-1 text-orange-700 font-mono font-bold rounded-lg border border-orange-100">
                             {{ deviceDetails.cpu_temp || '0°C' }}
                         </span>
                     </div>
@@ -272,9 +268,9 @@ export default {
 
         const updateData = (history) => {
             if (!history || history.length === 0) return;
-            
+
             const last = [...history].reverse().slice(-maxPoints);
-            
+
             cpuData.value = last.map(h => h.cpu_percent || 0);
             gpuData.value = last.map(h => h.gpu_load || 0);
             ramData.value = last.map(h => h.mem_percent || 0);
@@ -284,21 +280,21 @@ export default {
                 return parseFloat(tempStr.replace('°C', '')) || 0;
             });
 
-            if (cpuChart) { 
-                cpuChart.data.datasets[0].data = [...cpuData.value]; 
-                cpuChart.update('none'); 
+            if (cpuChart) {
+                cpuChart.data.datasets[0].data = [...cpuData.value];
+                cpuChart.update('none');
             }
-            if (gpuChart) { 
-                gpuChart.data.datasets[0].data = [...gpuData.value]; 
-                gpuChart.update('none'); 
+            if (gpuChart) {
+                gpuChart.data.datasets[0].data = [...gpuData.value];
+                gpuChart.update('none');
             }
-            if (ramChart) { 
-                ramChart.data.datasets[0].data = [...ramData.value]; 
-                ramChart.update('none'); 
+            if (ramChart) {
+                ramChart.data.datasets[0].data = [...ramData.value];
+                ramChart.update('none');
             }
-            if (tempChart) { 
-                tempChart.data.datasets[0].data = [...tempData.value]; 
-                tempChart.update('none'); 
+            if (tempChart) {
+                tempChart.data.datasets[0].data = [...tempData.value];
+                tempChart.update('none');
             }
         };
 
@@ -314,33 +310,33 @@ export default {
         watch(() => props.deviceDetails.last_update, () => {
              cpuData.value.push(props.deviceDetails.cpu_percent || 0);
              cpuData.value.shift();
-             
+
              gpuData.value.push(props.deviceDetails.gpu_load || 0);
              gpuData.value.shift();
-             
+
              ramData.value.push(props.deviceDetails.mem_percent || 0);
              ramData.value.shift();
-             
+
              const tempStr = String(props.deviceDetails.cpu_temp || '0');
              const t = tempStr === 'N/A' ? 0 : (parseFloat(tempStr.replace('°C', '')) || 0);
              tempData.value.push(t);
              tempData.value.shift();
 
-             if (cpuChart) { 
-                cpuChart.data.datasets[0].data = [...cpuData.value]; 
-                cpuChart.update('none'); 
+             if (cpuChart) {
+                cpuChart.data.datasets[0].data = [...cpuData.value];
+                cpuChart.update('none');
              }
-             if (gpuChart) { 
-                gpuChart.data.datasets[0].data = [...gpuData.value]; 
-                gpuChart.update('none'); 
+             if (gpuChart) {
+                gpuChart.data.datasets[0].data = [...gpuData.value];
+                gpuChart.update('none');
              }
-             if (ramChart) { 
-                ramChart.data.datasets[0].data = [...ramData.value]; 
-                ramChart.update('none'); 
+             if (ramChart) {
+                ramChart.data.datasets[0].data = [...ramData.value];
+                ramChart.update('none');
              }
-             if (tempChart) { 
-                tempChart.data.datasets[0].data = [...tempData.value]; 
-                tempChart.update('none'); 
+             if (tempChart) {
+                tempChart.data.datasets[0].data = [...tempData.value];
+                tempChart.update('none');
              }
         });
 

@@ -9,7 +9,7 @@
           class="w-full text-left px-4 py-2 rounded-md cursor-pointer transition-colors"
           :class="selectedDeviceId === device.raspberry_id ? 'bg-blue-500 text-white' : 'hover:bg-blue-50 text-gray-700'"
         >
-          Raspberry ID: {{ device.raspberry_id }}
+          ID: {{ device.raspberry_id }}
         </button>
       </li>
     </ul>
@@ -32,4 +32,3 @@ export default {
   emits: ['select-device']
 };
 </script>
-
