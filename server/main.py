@@ -103,17 +103,17 @@ def export_database_zip(db: Session = Depends(get_db)):
         # Device Status (current)
         rows = db.query(DeviceStatus).order_by(DeviceStatus.last_update.desc()).all()
         buffer = io.StringIO(); writer = csv.writer(buffer)
-        writer.writerow(["id","raspberry_id","wifi_status","mem_usage","cpu_temp","cpu_percent","spi_buses","i2c_buses","usb_devices_count","net_bytes_sent","net_bytes_recv","net_ifaces","last_update"]) 
+        writer.writerow(["id","raspberry_id","wifi_status","mem_usage","cpu_temp","cpu_percent","net_bytes_sent","net_bytes_recv","net_ifaces","last_update"]) 
         for r in rows:
-            writer.writerow([r.id, r.raspberry_id, r.wifi_status, r.mem_usage, r.cpu_temp, r.cpu_percent, r.spi_buses, r.i2c_buses, r.usb_devices_count, r.net_bytes_sent, r.net_bytes_recv, r.net_ifaces, r.last_update.isoformat()])
+            writer.writerow([r.id, r.raspberry_id, r.wifi_status, r.mem_usage, r.cpu_temp, r.cpu_percent, r.net_bytes_sent, r.net_bytes_recv, r.net_ifaces, r.last_update.isoformat()])
         zf.writestr("device_status.csv", buffer.getvalue())
 
         # Device Status History
         rows = db.query(DeviceStatusHistory).order_by(DeviceStatusHistory.timestamp.desc()).all()
         buffer = io.StringIO(); writer = csv.writer(buffer)
-        writer.writerow(["id","raspberry_id","wifi_status","mem_usage","cpu_temp","cpu_percent","spi_buses","i2c_buses","usb_devices_count","net_bytes_sent","net_bytes_recv","net_ifaces","timestamp"]) 
+        writer.writerow(["id","raspberry_id","wifi_status","mem_usage","cpu_temp","cpu_percent","net_bytes_sent","net_bytes_recv","net_ifaces","timestamp"]) 
         for r in rows:
-            writer.writerow([r.id, r.raspberry_id, r.wifi_status, r.mem_usage, r.cpu_temp, r.cpu_percent, r.spi_buses, r.i2c_buses, r.usb_devices_count, r.net_bytes_sent, r.net_bytes_recv, r.net_ifaces, r.timestamp.isoformat()])
+            writer.writerow([r.id, r.raspberry_id, r.wifi_status, r.mem_usage, r.cpu_temp, r.cpu_percent, r.net_bytes_sent, r.net_bytes_recv, r.net_ifaces, r.timestamp.isoformat()])
         zf.writestr("device_status_history.csv", buffer.getvalue())
 
     mem.seek(0)

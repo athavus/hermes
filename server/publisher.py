@@ -64,10 +64,6 @@ def get_system_info():
                 wifi_status = "online"
                 break
 
-        spi_buses = len(glob("/dev/spidev*"))
-        i2c_buses = len(glob("/dev/i2c-*"))
-        usb_devices_count = len(glob("/sys/bus/usb/devices/*usb*"))
-
         net_io = psutil.net_io_counters()
         net_bytes_sent = net_io.bytes_sent
         net_bytes_recv = net_io.bytes_recv
@@ -113,9 +109,6 @@ def get_system_info():
             "gpu_temp": gpu_temp,
             "gpu_load": gpu_load,
             "wifi_status": wifi_status,
-            "spi_buses": spi_buses,
-            "i2c_buses": i2c_buses,
-            "usb_devices_count": usb_devices_count,
             "net_bytes_sent": net_bytes_sent,
             "net_bytes_recv": net_bytes_recv,
             "net_ifaces": net_ifaces,

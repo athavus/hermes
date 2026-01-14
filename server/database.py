@@ -18,9 +18,6 @@ class DeviceStatus(Base):
     mem_percent = Column(Float, default=0.0)
     cpu_temp = Column(String, default="0°C")
     cpu_percent = Column(Float, default=0.0)
-    spi_buses = Column(Integer, default=0)
-    i2c_buses = Column(Integer, default=0)
-    usb_devices_count = Column(Integer, default=0)
     net_bytes_sent = Column(Integer, default=0)
     net_bytes_recv = Column(Integer, default=0)
     net_ifaces = Column(Text, default="[]")
@@ -38,9 +35,6 @@ class DeviceStatusHistory(Base):
     mem_percent = Column(Float, default=0.0)
     cpu_temp = Column(String, default="0°C")
     cpu_percent = Column(Float, default=0.0)
-    spi_buses = Column(Integer, default=0)
-    i2c_buses = Column(Integer, default=0)
-    usb_devices_count = Column(Integer, default=0)
     net_bytes_sent = Column(Integer, default=0)
     net_bytes_recv = Column(Integer, default=0)
     net_ifaces = Column(Text, default="[]")
@@ -57,4 +51,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
